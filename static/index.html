@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Desk</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <p class="eyebrow">Local delivery</p>
+      <h1>Desk</h1>
+      <p id="summary" class="summary">Loading…</p>
+    </div>
+    <div class="roles" id="roles" role="tablist" aria-label="Role"></div>
+    <div class="who">
+      <label>Name
+        <input id="actor" maxlength="40" placeholder="Your name" autocomplete="name">
+      </label>
+      <label id="stall-wrap">Stall
+        <select id="stall"></select>
+      </label>
+    </div>
+  </header>
+  <p id="notice" class="notice" hidden></p>
+  <main id="main"></main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

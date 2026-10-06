@@ -1,0 +1,209 @@
+:root {
+  --ink: #1c1915;
+  --muted: #5e574e;
+  --line: #e4dcd0;
+  --paper: #f6f1e8;
+  --card: #fffdf9;
+  --green: #0f6e56;
+  --green-ink: #ffffff;
+  --warn: #8a4b12;
+  --danger: #8d2b2b;
+  --shadow: 0 1px 0 rgba(28, 25, 21, 0.04);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 16px/1.45 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+button, input, select { font: inherit; color: inherit; }
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  gap: 14px;
+  padding: 18px 16px 14px;
+  background: rgba(246, 241, 232, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.eyebrow, .summary, .quiet {
+  margin: 0;
+  color: var(--muted);
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.roles { display: flex; gap: 8px; }
+
+.roles button, .btn, .qty button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.roles button[aria-selected="true"], .btn.primary {
+  background: var(--green);
+  color: var(--green-ink);
+  border-color: var(--green);
+}
+
+.btn.danger {
+  color: var(--danger);
+  border-color: #e7c8c8;
+}
+
+.who {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.who label {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.who input, .who select, .field input {
+  min-width: 180px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+main {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 18px 16px 48px;
+}
+
+.notice {
+  width: min(720px, calc(100% - 32px));
+  margin: 12px auto 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f8e7cf;
+  color: var(--warn);
+}
+
+.stack { display: grid; gap: 12px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
+.card h2, .card h3 { margin: 0 0 4px; }
+
+.card button.block {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.price { font-variant-numeric: tabular-nums; }
+
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #efe7da;
+  font-size: 13px;
+}
+
+.pill.delivered { background: #d9f0e6; color: var(--green); }
+.pill.rejected { background: #f6dede; color: var(--danger); }
+.pill.ready, .pill.claimed, .pill.picked_up { background: #f8e7cf; color: var(--warn); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+.qty { display: flex; align-items: center; gap: 8px; }
+.qty button { width: 36px; height: 36px; padding: 0; }
+.qty span { min-width: 1.2em; text-align: center; }
+
+.timeline { list-style: none; margin: 8px 0 0; padding: 0; }
+.timeline li {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 8px;
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.basket {
+  position: sticky;
+  bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 16px;
+  background: var(--ink);
+  color: #f6f1e8;
+}
+
+.basket .btn.primary { background: #f6f1e8; color: var(--ink); border-color: #f6f1e8; }
+
+.section-label {
+  margin: 8px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.empty { color: var(--muted); }
+
+@media (min-width: 800px) {
+  .top {
+    grid-template-columns: 1fr auto auto;
+    align-items: end;
+    padding-inline: 28px;
+  }
+}
